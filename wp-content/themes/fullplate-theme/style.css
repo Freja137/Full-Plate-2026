@@ -1,0 +1,1324 @@
+/*
+Theme Name: Full Plate
+Author: Freja
+Version: 1.0
+*/
+
+/* General styling */
+:root {
+    --navy: #222B41;
+    --offWhite: #FFFAEC;
+    --camel: #B38F67;
+    --white: #ffffff;
+    --black: #000000;
+    --smallGap: 1rem;
+    --mediumGap: 2rem;
+    --largeGap: 3rem;
+    --largestGap: 4rem;
+    --h1Size: 60px;
+    --h2Size: 35px;
+    --h3Size: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--offWhite);
+}
+
+main {
+    margin: 0 150px;
+}
+
+/* Knapper */
+.btn {
+    display: flex;
+    gap: var(--mediumGap);
+    border: none;
+    padding: 0;
+    background: none;
+    align-items: center;
+}
+
+.btn-arrow {
+    color: var(--camel);
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.btn-arrow:hover {
+    color: var(--camel);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+
+/* Tekst styling */
+h1 {
+    width: fit-content;
+    margin: var(--largestGap) 0 var(--mediumGap);
+    padding-bottom: 0.5rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--camel);
+    font-family: "Playfair Display", serif;
+    font-size: var(--h1Size);
+}
+
+h2 {
+    margin: var(--largestGap) 0 var(--mediumGap);
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+    font-size: var(--h2Size);
+}
+
+/* Hero start */
+.hero {
+    padding-bottom: var(--largestGap);
+    border-bottom: 1px solid var(--black);
+}
+
+.hero-text {
+    max-width: 700px;
+    font-size: 20px;
+}
+
+/* Blå boks med billede */
+.blue-card {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    padding-left: var(--largeGap);
+    margin-top: var(--largestGap);
+    background-color: var(--navy);
+    /* Så billedet ikke overlapper andet på siden */
+    transition: transform 0.3s ease;
+}
+
+.blue-card-img {
+    position: relative;
+    top: -37.5px;
+    width: 50%;
+    height: 375px;
+    object-fit: cover;
+}
+
+.blue-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--largeGap);
+    color: var(--white);
+    background-color: var(--navy);
+}
+
+.blue-card:hover {
+    transform: scale(1.01);
+}
+
+.blue-box h3 {
+    margin: 0 0 var(--mediumGap);
+    font-size: var(--h3Size);
+}
+
+.blue-box-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-arrow.blue-card-link {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Blå boks slutter */
+
+/* Header start */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 0.5rem var(--largeGap);
+    background-color: var(--navy);
+}
+
+/* Navigation og ikon bliver camel */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--largeGap);
+}
+
+.logo img {
+    display: block;
+    width: 80px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links .current-menu-item a {
+    color: var(--camel);
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--camel);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--mediumGap);
+}
+
+.header-search {
+    position: relative;
+}
+
+.header-search input {
+    width: 230px;
+    padding: 8px 40px 8px 20px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 30px;
+}
+
+.header-search button {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    padding: 0;
+    color: var(--navy);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.header-search button:hover {
+    color: var(--camel);
+}
+
+.user-login {
+    color: var(--white);
+    background: transparent;
+    border: none;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.user-login:hover {
+    color: var(--camel);
+}
+
+/* Header slut */
+/* Focused Entry Points cards */
+.fep-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--smallGap);
+    width: 100%;
+    margin-top: var(--largestGap);
+}
+
+.fep-card-content {
+    position: relative;
+    min-width: 0;
+    height: 325px;
+    overflow: hidden;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.fep-card-content:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+.fep-card-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fep-card-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
+}
+
+.fep-card-text {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    left: 20px;
+    z-index: 1;
+    color: var(--white);
+}
+
+.fep-card-text h3 {
+    margin: 0 0 5px;
+    font-size: var(--h3Size);
+    font-weight: 700;
+}
+
+.fep-card-text p {
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Recipe cards */
+/* Placering af alle recipe cards */
+.recipes-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--smallGap);
+    width: 100%;
+    margin-bottom: var(--largestGap);
+    margin-top: var(--mediumGap);
+}
+
+/* Det enkelte card */
+.recipe-card {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Cardets billede */
+.recipe-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: scale(1.02);
+}
+
+.recipe-card-text {
+    padding: 4px 0;
+}
+
+.recipe-card-text>p:first-child {
+    margin: 0;
+}
+
+.recipe-card-text h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.recipe-card-text>h3+p {
+    min-height: 48px;
+    margin: 0 0 16px;
+    font-size: 14px;
+}
+
+.recipe-card-text>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--smallGap);
+    padding-top: 14px;
+    border-top: 1px solid var(--black);
+}
+
+.recipe-card-text>div p {
+    margin: 0;
+}
+
+.recipe-card-text>div a {
+    color: var(--black);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.author-level-thin {
+    font-weight: 350;
+}
+
+/* Recipe filter */
+.recipe-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: var(--largestGap) 0;
+    padding: 28px 0;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+}
+
+.recipe-filter-options {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.filter-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--smallGap);
+    color: var(--black);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    color: var(--camel);
+    font-weight: 700;
+}
+
+/* Footer */
+.site-footer {
+    padding: 32px 5%;
+    color: var(--white);
+    background-color: var(--navy);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--largestGap);
+    width: 100%;
+    max-width: 1400px;
+    min-height: 170px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    display: block;
+    width: 145px;
+    height: auto;
+}
+
+.footer-column h3 {
+    margin: 0 0 8px;
+    color: var(--camel);
+    font-weight: 600;
+}
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: var(--smallGap);
+}
+
+.footer-column a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: var(--camel);
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-socials {
+    display: flex;
+    gap: var(--mediumGap);
+}
+
+.footer-socials a {
+    color: var(--camel);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: var(--white);
+}
+
+.footer-right p {
+    margin: 0;
+}
+
+/* Lille author billede + navn */
+.story-author {
+    display: flex;
+    align-items: center;
+    gap: var(--smallGap);
+    margin: var(--largeGap) 0 0;
+}
+
+.story-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.story-author p {
+    color: var(--navy);
+}
+
+/* Indhold */
+.story-date {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--camel);
+    font-style: italic;
+}
+
+.food-story-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--largeGap);
+}
+
+.first-letter {
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+    font-size: var(--h2Size);
+}
+
+.foodstory-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.foodstory-text {
+    padding: 0 0 var(--mediumGap);
+}
+
+.foodstory-content {
+    max-width: 700px;
+}
+
+.foodstory-content h3 {
+    margin-bottom: 25px;
+}
+
+.foodstory-content .btn {
+    margin-top: 25px;
+}
+
+/* Progress bar til single siderne */
+.progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--camel);
+    animation-name: scroll;
+    animation-timeline: scroll();
+    transform-origin: left;
+}
+
+@keyframes scroll {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Single food story slut */
+
+/* Single Tool */
+.tool-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--largeGap);
+    align-items: start;
+}
+
+/* HP start */
+.hero-homepage {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    padding: var(--largestGap);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.42),
+            rgba(0, 0, 0, 0.42)),
+        url("./images/frontpage-hero.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-homepage-text {
+    width: 100%;
+    max-width: 900px;
+    color: var(--white);
+}
+
+.hero-homepage-text h1 {
+    color: var(--white);
+    font-size: var(--h1Size);
+}
+
+.hero-homepage-text p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 1;
+    transform: translateX(-50%);
+    transition: opacity 0.4s ease;
+}
+
+.hero-scroll i {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* Hoppende pil */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.hero-scroll.scrolled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tools-homepage {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    column-gap: 140px;
+    margin-top: 100px;
+    margin-bottom: var(--largestGap);
+    padding-top: var(--largestGap);
+    border-top: 1px solid var(--black);
+}
+
+.tools-homepage h2 {
+    margin-top: 0;
+    margin-bottom: var(--smallGap);
+}
+
+.tools-homepage p {
+    padding-bottom: var(--largestGap);
+}
+
+.tool-img-container {
+    display: flex;
+    gap: var(--mediumGap);
+}
+
+.tool-img-container img {
+    object-fit: cover;
+}
+
+.tool-img-hp {
+    width: 250px;
+    height: 500px;
+}
+
+.heading-frontpage {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--largestGap);
+}
+
+.heading-frontpage h2 {
+    margin: 0;
+    align-items: center;
+}
+
+.heading-frontpage .btn {
+    align-items: center;
+}
+
+/* HP slut */
+
+/* Single recipe start */
+.all-recipes-arrow {
+    margin-top: var(--largestGap);
+}
+
+.all-recipes-arrow a {
+    color: var(--camel);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-label {
+    margin-top: var(--largestGap);
+    font-size: var(--h3Size);
+    font-weight: 500;
+}
+
+.recipe-hero {
+    position: relative;
+    min-height: 320px;
+    padding-right: 450px;
+}
+
+.hero-recipe-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 325px;
+    height: 350px;
+}
+
+.hero-recipe-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-recipe {
+    margin-top: 0;
+}
+
+.recipe-pagination {
+    margin-bottom: var(--largestGap);
+    color: var(--camel);
+    font-weight: 700;
+}
+
+.recipe-author {
+    margin-top: var(--smallGap);
+}
+
+/* Informations række til hver enkelt opskrift */
+.recipe-meta-info {
+    display: flex;
+    gap: var(--largestGap);
+    margin-bottom: var(--largestGap);
+    margin-top: var(--mediumGap);
+}
+
+.meta-info p:first-child {
+    margin-bottom: 0.5rem;
+    color: var(--camel);
+    font-size: small;
+    font-weight: 600;
+}
+
+.meta-info p:last-child {
+    color: var(--navy);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Recipe details styling */
+.recipe-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: var(--largestGap) 0;
+}
+
+.recipe-details h3 {
+    margin: 0 0 var(--mediumGap);
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+/* Ingredients */
+.ingredients {
+    padding-right: var(--largeGap);
+}
+
+.ingredients-text,
+.method-text {
+    /* Skubber hver metode og ingrediens ned på sin egen linje  */
+    white-space: pre-line;
+    line-height: 2;
+    margin-top: 0;
+}
+
+.portions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--mediumGap);
+}
+
+.portions p {
+    margin: 0 10px 0 0;
+}
+
+.portions button {
+    width: 34px;
+    height: 34px;
+    background-color: var(--camel);
+    border: none;
+    border-radius: 8px;
+    font-size: var(--h3Size);
+    cursor: pointer;
+}
+
+.portions span {
+    width: 110px;
+    padding: 3px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ingredients ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ingredients li {
+    margin-bottom: var(--smallGap);
+}
+
+/* Method styling */
+.method {
+    padding-left: var(--largeGap);
+    border-left: 2px solid var(--navy);
+}
+
+.method ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Tip sektion på recipe siden */
+.tip-card {
+    margin: 140px 0;
+}
+
+.recipe-tip h3 {
+    color: var(--camel);
+    font-size: 15px;
+}
+
+.recipe-tip p {
+    font-size: 20px;
+}
+
+/* Tool essentials in recipe */
+.recipe-essentials {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+    gap: var(--largeGap);
+    margin-bottom: var(--largestGap);
+}
+
+.essentials-intro {
+    padding-right: var(--largeGap);
+}
+
+.essentials-intro h2 {
+    max-width: 480px;
+    margin: 0 0 var(--mediumGap);
+}
+
+.essentials-intro p {
+    margin: 0 0 var(--mediumGap);
+}
+
+.essential-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.essential-card h3 {
+    margin: var(--smallGap) 0 2px;
+}
+
+.essential-card>p {
+    min-height: 48px;
+    margin: 0 0 var(--smallGap);
+}
+
+.essential-card>div {
+    padding-top: var(--smallGap);
+    border-top: 1px solid var(--black);
+}
+
+.essential-card>div p {
+    margin: 0;
+}
+
+/* Related recipes */
+.related-recipes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--largestGap);
+    margin-bottom: var(--largestGap);
+}
+
+.related-recipe img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.author-related-recipe {
+    margin: var(--smallGap) 0;
+    font-weight: 300;
+}
+
+/* Single recipe slut */
+
+/* TOOLS START */
+.tools-hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: var(--largestGap);
+    min-height: 450px;
+    padding: var(--largestGap) 0;
+}
+
+.tools-hero .hero-text h1 {
+    margin-top: 0;
+}
+
+.tools-hero-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--smallGap);
+    max-width: 550px;
+    margin-left: auto;
+}
+
+.tools-hero-images img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.tip-of-the-week {
+    color: var(--camel);
+    font-weight: 600;
+}
+
+.tools-filter {
+    margin-bottom: var(--mediumGap);
+}
+
+/* TOOLS SLUT */
+
+/* LOGIN POPUP */
+/* Det mørke område bag popup-vinduet */
+.account-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1999;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+/* Det mørke overlay vises */
+.account-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Selve account-panelet */
+.account-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 450px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: var(--mediumGap) var(--largestGap);
+    color: var(--black);
+    background-color: var(--offWhite);
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+/* Panelet vises */
+.account-panel.open {
+    transform: translateX(0);
+}
+
+/* Container med overskrift og kryds */
+.account-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--smallGap);
+    margin: 0 0 var(--smallGap);
+}
+
+/* Overskriften */
+.account-panel-header h2 {
+    margin: 0;
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+}
+
+/* Krydset */
+.close-account {
+    position: static;
+    flex-shrink: 0;
+    margin: 8px 0 0;
+    padding: 0;
+    color: var(--navy);
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Intro-teksten */
+.account-panel>p {
+    margin: 0 0 var(--mediumGap);
+}
+
+/* Formularen */
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallGap);
+}
+
+/* Labels omkring tekstfelterne */
+.account-form>label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Tekstfelterne */
+.account-form input[type="text"],
+.account-form input[type="email"],
+.account-form input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: var(--white);
+    border: 2px solid var(--navy);
+}
+
+/* Valg af niveau */
+.cook-level {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smallGap);
+    margin: var(--smallGap) 0;
+    padding: 0;
+    border: none;
+}
+
+/* Hvert niveau */
+.cook-level label {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+/* Create account-knappen */
+.create-account {
+    width: 100%;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--navy);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Linket placeres nederst i panelet */
+.account-login {
+    align-self: center;
+    margin-top: auto;
+    color: var(--camel);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Statisk kommentarfelt på single recipe */
+.recipe-reviews {
+    margin: var(--largestGap) 0;
+    padding: var(--largestGap) 0;
+}
+
+.reviews-heading {
+    margin-bottom: var(--largeGap);
+}
+
+.reviews-heading>p {
+    margin-bottom: var(--smallGap);
+    color: var(--camel);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.reviews-heading h2 {
+    margin: 0;
+}
+
+.review-list {
+    border-top: 1px solid var(--navy);
+}
+
+.review {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--largeGap);
+    padding: var(--largeGap) 0;
+    border-bottom: 1px solid var(--navy);
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: var(--smallGap);
+}
+
+.review-author img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-author h3 {
+    margin: 0 0 4px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+.review-author p {
+    margin: 0;
+    color: var(--camel);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.review-content {
+    max-width: 700px;
+}
+
+.review-stars {
+    margin-bottom: var(--smallGap);
+    color: var(--camel);
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.review-content p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Search overlay */
+.header-search {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    background-color: var(--white);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.header-search input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.header-search input::placeholder {
+    font-size: 12px;
+}
+
+.header-search button {
+    margin-left: auto;
+    color: var(--navy);
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(255, 250, 236, 0.8);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.search-overlay-results {
+    margin: 0 150px;
+    padding-bottom: var(--largestGap);
+}
+
+.search-overlay.search-overlay--has-results {
+    background-color: var(--offWhite);
+}
+
+.search-overlay.search-overlay--active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Placering af søgefeltet inde i overlayet */
+.search-overlay-top {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4rem var(--largeGap);
+}
+
+/* Formularen med ikon, input og kryds */
+.search-overlay-form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--camel);
+}
+
+/* Søgeikonet til venstre */
+.search-overlay-icon {
+    flex-shrink: 0;
+    color: var(--camel);
+    font-size: 1.2rem;
+}
+
+/* Det store inputfelt */
+.search-term {
+    flex: 1;
+    min-width: 0;
+    padding: 0.5rem 0;
+    color: var(--navy);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+}
+
+.search-term::placeholder {
+    color: var(--navy);
+    opacity: 0.6;
+}
+
+/* Fjerner browserens eget lille kryds */
+.search-term::-webkit-search-cancel-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Jeres eget kryds til højre */
+.search-overlay-close {
+    position: static;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    color: var(--navy);
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.search-overlay-close:hover {
+    color: var(--camel);
+}
+
+/* Forhindrer siden bag overlayet i at scrolle */
+.body-no-scroll {
+    overflow: hidden;
+}
