@@ -1,0 +1,25 @@
+name: Publish Website
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+
+jobs:
+  web-deploy:
+    name: 🚀 Deploy Website Every Commit
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v6
+    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
+      with:
+        target-server: ssh.cp7z6gzvr.service.one
+        ssh-port: 22 
+        remote-user: cp7z6gzvr_ssh
+        private-ssh-key: ${{ secrets.SSH_KEY }}
+        destination-path: /customers/3/a/6/cp7z6gzvr/webroots/7233d26a
